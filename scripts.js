@@ -1,25 +1,22 @@
-let container = document.getElementById('container');
-let innerDivs = document.createElement('div');
-container.appendChild(innerDivs);
+function createRows(numberOfRows) {
+    const container = document.getElementById('container');
 
-
-
-
-let innerDivClass = document.getElementById('container').childNodes;
-
-let styleInnerDivs = document.getElementsByClassName('innerDivs');
-innerDivs.style.display = 'inline-block';
-innerDivs.style.position = 'relative';
-
-
-function createInnerDivs(amountOfDivs) {
-    for (let i = 0; i < amountOfDivs; i++) {
+    for (let i = 0; i < numberOfRows; i++) {
         document.createElement('div');
-        container.appendChild(document.createElement('div')).classList.add('innerDivs');
+        container.appendChild(document.createElement('div')).classList.add('innerDivRows');
     }
 }
 
-for (let i = 0; i <= innerDivClass.length; i++) {
-    console.log(document.getElementById('container').childNodes[i]);
-     //.classList.add('innerDivs');
+function divideRows(numberOfCols) {
+    const container = document.getElementById('container');
+
+    for (let j = 0 ; j < numberOfCols; j++) {
+        for (let k = 0; k < numberOfCols; k++) {
+            document.createElement('div');
+            container.childNodes[j].appendChild(document.createElement('div')).classList.add('innerDivCols');
+        }
+    }
 }
+
+createRows(8);
+divideRows(8);

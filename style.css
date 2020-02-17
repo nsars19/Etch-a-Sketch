@@ -1,7 +1,9 @@
-#mainContainer {
+#container {
     height: 500px;
     width: 500px;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
     display: grid;
     /*flex-direction: ; */
     /*justify-content: space-evenly;*/
@@ -9,11 +11,14 @@
     position: relative;
     margin: auto;
 }
-.innerDivs {
+.innerDivRows {
+    border-bottom: 1px solid black;
+    display: flex;
+}
+.innerDivCols {
     border: 1px solid black;
-    height: 18px;
-    width: 18px;
-    display: inline;
+    display: flex;
+    flex-direction: row;
     position: relative;
     padding: 0;
     margin: 0;
