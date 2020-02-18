@@ -7,7 +7,7 @@ function makeRows(rows, cols) {
     container.style.setProperty('--gridCols', cols);
     for (c = 0; c < (rows * cols); c++) {
       let cell = document.createElement("div");
-      cell.style.border = '1px solid gray';
+      
       container.appendChild(cell).className = "gridItem";
     };
 };
@@ -22,6 +22,7 @@ const buttonText = button.innerText = 'Submit';
 const buttonPadding = button.style.marginLeft = '8px';
 
 button.addEventListener('click', function() {
+    let clearContainer = document.getElementById('container').innerHTML = '';
     if (parseInt(textBar.value) == textBar.value) {
         makeRows(textBar.value, textBar.value);
     } else if (!parseInt(textBar.value)) {
