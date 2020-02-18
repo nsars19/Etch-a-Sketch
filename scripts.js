@@ -22,8 +22,9 @@ const buttonText = button.innerText = 'Submit';
 const buttonPadding = button.style.marginLeft = '8px';
 
 button.addEventListener('click', function() {
-    let clearContainer = document.getElementById('container').innerHTML = '';
+    
     if (parseInt(textBar.value) == textBar.value) {
+        let clearContainer = document.getElementById('container').innerHTML = '';
         makeRows(textBar.value, textBar.value);
     } else if (!parseInt(textBar.value)) {
         alert('You silly goose! That\'s not a number!');
