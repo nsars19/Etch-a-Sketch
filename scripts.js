@@ -28,7 +28,6 @@ button.addEventListener('click', function() {
     } else if (!parseInt(textBar.value)) {
         alert('You silly goose! That\'s not a number!');
     }
-    console.log(parseInt(textBar.value));
     textBar.value = '';
 });
 
