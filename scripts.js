@@ -43,6 +43,13 @@ const clearButtonWidth = clearButton.style.width = '6em';
 const clearButtonText = clearButton.innerText = 'Start over';
 const clearButtonPadding = clearButton.style.marginLeft = '8px';
 
+clearButton.addEventListener('click', function() {
+  const gridItem = document.getElementsByClassName('gridItem');
+  for (let i = 0; i < gridItem.length; i++) {
+      gridItem[i].style.backgroundColor = 'white';
+  }
+});
+
 let textBar = document.createElement('input');
 const textBarHeight = textBar.style.height = '34px';
 const textBarWidth = textBar.style.width = '160px';
