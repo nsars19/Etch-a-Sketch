@@ -13,7 +13,15 @@ function makeRows(rows, cols) {
   const gridItem = document.getElementsByClassName('gridItem');
   for (let i = 0; i < gridItem.length; i++) {
       gridItem[i].addEventListener('mouseover', function() {
-          gridItem[i].style.backgroundColor = 'black';
+          function randomColor() {
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+          }
+          gridItem[i].style.backgroundColor = randomColor();
       });
   };
 };
