@@ -21,6 +21,16 @@ const buttonWidth = button.style.width = '6em';
 const buttonText = button.innerText = 'Submit';
 const buttonPadding = button.style.marginLeft = '8px';
 
+button.addEventListener('click', function() {
+    if (parseInt(textBar.value) == textBar.value) {
+        makeRows(textBar.value, textBar.value);
+    } else if (!parseInt(textBar.value)) {
+        alert('You silly goose! That\'s not a number!');
+    }
+    console.log(parseInt(textBar.value));
+    textBar.value = '';
+});
+
 const clearButton = document.createElement('button');
 const clearButtonHeight = clearButton.style.height = '37px';
 const clearButtonWidth = clearButton.style.width = '6em';

@@ -5,6 +5,7 @@
 h1 {
     text-align: center;
     padding: 15px;
+    padding-bottom: 5px;
 }
 #container {
     height: 500px;
