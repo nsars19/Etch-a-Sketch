@@ -3,15 +3,21 @@ let rows = document.getElementsByClassName('innerDivRows');
 let cols = document.getElementsByClassName('innerDivCols');
 
 function makeRows(rows, cols) {
-    container.style.setProperty('--gridRows', rows);
-    container.style.setProperty('--gridCols', cols);
-    for (c = 0; c < (rows * cols); c++) {
-      let cell = document.createElement("div");
-      
-      container.appendChild(cell).className = "gridItem";
-    };
+  container.style.setProperty('--gridRows', rows);
+  container.style.setProperty('--gridCols', cols);
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    
+    container.appendChild(cell).className = "gridItem";
+  };
+  const gridItem = document.getElementsByClassName('gridItem');
+  for (let i = 0; i < gridItem.length; i++) {
+      gridItem[i].addEventListener('mouseover', function() {
+          gridItem[i].style.backgroundColor = 'black';
+      });
+  };
 };
-  // Default setting upon page load
+// Default setting upon page load
   makeRows(16, 16);
 
 const inputContainer = document.getElementById('userInputs');
@@ -22,7 +28,6 @@ const buttonText = button.innerText = 'Submit';
 const buttonPadding = button.style.marginLeft = '8px';
 
 button.addEventListener('click', function() {
-    
     if (parseInt(textBar.value) == textBar.value) {
         let clearContainer = document.getElementById('container').innerHTML = '';
         makeRows(textBar.value, textBar.value);
@@ -39,9 +44,10 @@ const clearButtonText = clearButton.innerText = 'Start over';
 const clearButtonPadding = clearButton.style.marginLeft = '8px';
 
 let textBar = document.createElement('input');
-const textBarHeight = textBar.style.height = '37px';
+const textBarHeight = textBar.style.height = '34px';
 const textBarWidth = textBar.style.width = '160px';
 const textBarContent = textBar.placeholder = 'Select a grid size!'
+
 
 inputContainer.appendChild(textBar);
 inputContainer.appendChild(button);
