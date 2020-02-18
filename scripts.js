@@ -1,22 +1,37 @@
-function createRows(numberOfRows) {
-    const container = document.getElementById('container');
+const container = document.getElementById('container');
+let rows = document.getElementsByClassName('innerDivRows');
+let cols = document.getElementsByClassName('innerDivCols');
 
+function defaultGrid() {
+    createRows(8);
+    createCols(8);
+}
+
+function createRows(numberOfRows) {
     for (let i = 0; i < numberOfRows; i++) {
         document.createElement('div');
         container.appendChild(document.createElement('div')).classList.add('innerDivRows');
     }
 }
 
-function divideRows(numberOfCols) {
-    const container = document.getElementById('container');
-
-    for (let j = 0 ; j < numberOfCols; j++) {
+function createCols(numberOfCols) {
+    for (let j = 0 ; j < rows.length; j++) {
         for (let k = 0; k < numberOfCols; k++) {
-            document.createElement('div');
-            container.childNodes[j].appendChild(document.createElement('div')).classList.add('innerDivCols');
+            let col = document.createElement('div');
+            container.childNodes[j].appendChild(col).classList.add('innerDivCols');
         }
-    }
+    } 
 }
 
-createRows(8);
-divideRows(8);
+function makeRows(rows, cols) {
+    container.style.setProperty('--gridRows', rows);
+    container.style.setProperty('--gridCols', cols);
+    for (c = 0; c < (rows * cols); c++) {
+      let cell = document.createElement("div");
+      
+      cell.style.border = '1px solid gray';
+      container.appendChild(cell).className = "gridItem";
+    };
+  };
+  
+  makeRows(16, 16);

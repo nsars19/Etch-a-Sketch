@@ -1,28 +1,28 @@
+:root {
+    --gridCols: 1;
+    --gridRows: 1;
+}
 #container {
     height: 500px;
     width: 500px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
     display: grid;
-    /*flex-direction: ; */
-    /*justify-content: space-evenly;*/
-    /*flex-wrap: wrap;*/
+    grid-gap: 0px;
+    grid-template-columns: repeat(var(--gridCols), 1fr);
+    grid-template-rows: repeat(var(--gridRows), 1fr);
     position: relative;
     margin: auto;
 }
-.innerDivRows {
-    border-bottom: 1px solid black;
-    display: flex;
+.gridItem {
+    height: auto;
+    width: auto;
+    border: 1px solid rgb(131, 130, 130);
+    text-align: center;
 }
-.innerDivCols {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    padding: 0;
-    margin: 0;
+.gridItem:hover {
+    background-color: hsla(180, 7%, 86%, 0.747);
+    box-shadow: 1px 1px 1px 0px black;
 }
 h1 {
     text-align: center;
+    padding: 15px;
 }
